@@ -1,24 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import { MenuBar } from './MenuBar/MenuBar';
+import { MainTable } from './CurrentCellFunction/MainTable';
+import { createTableStructure } from './CellTables/createTableHelper';
+import { CreateCellTables } from './CellTables/createTable';
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+     <MenuBar/>
+     <MainTable/>
+     {/* <CreateCellTables/> */}
     </div>
   );
 }

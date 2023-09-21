@@ -1,0 +1,56 @@
+ .tableContainer {
+    border-collapse: collapse;
+    width: max-content;
+  }
+  
+ .tableData {
+    border: 1px solid #ddd;
+    padding: 4px;
+    
+    &:focus{
+      position:absolute;
+      background-color: whitesmoke;
+      //width: auto !important;
+      max-width:max-content;
+      min-width: 100px;
+    }
+  }
+
+  
+  .tableHeader {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 4px;
+    width: 100px;
+    position: relative;
+  }
+
+  .tableHeaderNum {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 4px;
+    width: 100px;
+    position: relative;
+  }
+  .tableHeaderNum::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -1px;
+    bottom: 0;
+    width: 100px;
+    background-color: white;
+    cursor: row-resize;
+    height: 2px;
+    left: 5px;
+  }
+  .tableHeader::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -5px;
+    bottom: 0;
+    width: 5px;
+    background-color: white;
+    cursor: col-resize;
+  }

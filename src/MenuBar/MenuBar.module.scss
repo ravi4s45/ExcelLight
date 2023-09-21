@@ -1,0 +1,20 @@
+
+.MenuBarContainer {
+ display: flex;
+ background-color: #30ae30;
+ width: 100%;
+ .MenuBarItems{
+    padding: 5px;
+    color: white;
+    &:hover{
+      color:#30ae30;
+      background-color:white;
+      cursor: pointer;
+    }
+ }
+ .MenuBarSelectedItem{
+   padding: 5px;
+   color:#30ae30;
+   background-color:white;
+ }
+}

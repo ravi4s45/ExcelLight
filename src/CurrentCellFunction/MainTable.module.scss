@@ -1,0 +1,28 @@
+.CellFunctionContainer{
+    display: flex;
+    background-color: gainsboro;
+}
+
+.CurrentCellName {
+    margin-top: 1%;
+    margin-left: 1%;
+    min-width: 5%;
+    height: 28px;
+    text-align: center;
+    background-color: white;
+}
+
+.FxHeader {
+    margin-top: 1%;
+    margin-left: 1%;
+    font-style: italic;
+}
+
+.CurrentCellInput {
+    width: 90%;
+    padding: 0.35%;
+    margin-top: 1%;
+    margin-left: 0.5%;
+    margin-bottom: 0.5%;
+    border: none;
+}
