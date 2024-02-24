@@ -1,4 +1,4 @@
-import { Cell } from "./ICellProps";
+import { Cell, CellType } from "./ICellProps";
 
 export function createTableStructure(){
     const numRows = 100; // Number of rows in the matrix
@@ -14,7 +14,8 @@ for (let row = 0; row < numRows; row++) {
     matrix[row][col] = {
       row: row + 1,
       column: String.fromCharCode(65 + col), // Convert column index to corresponding letter (A, B, C, ...)
-      value: "",
+      value: `${String.fromCharCode(65+col)}-${row+1}`,
+      type:CellType.Text,
       properties: {}
     };
   }  

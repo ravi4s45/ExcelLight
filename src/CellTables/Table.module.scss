@@ -21,8 +21,9 @@
     background-color: #f2f2f2;
     border: 1px solid #ddd;
     padding: 4px;
-    width: 100px;
-    position: relative;
+    width: 100px;//100px;
+    text-align: center;
+    //position: relative;
   }
 
   .tableHeaderNum {
@@ -32,18 +33,18 @@
     width: 100px;
     position: relative;
   }
-  .tableHeaderNum::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: -1px;
-    bottom: 0;
-    width: 100px;
-    background-color: white;
-    cursor: row-resize;
-    height: 2px;
-    left: 5px;
-  }
+  // .tableHeaderNum::after {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   right: -1px;
+  //   bottom: 0;
+  //   width: 100px;
+  //   background-color: white;
+  //   cursor: row-resize;
+  //   height: 2px;
+  //   left: 5px;
+  // }
   .tableHeader::after{
     content: "";
     position: absolute;
@@ -53,4 +54,35 @@
     width: 5px;
     background-color: white;
     cursor: col-resize;
+  }
+  .tableHeaderNum {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 4px;
+    width: 60px;//100px;
+    text-align: center;
+    //position: relative;
+  }
+  .MainGrid {
+    position: relative;
+    overflow: scroll;
+  }
+
+  .MainTable {
+    position: absolute;
+    width: 2000px;
+    height: 1000px;
+    background-color: azure;
+    left: 70px;
+    top: 0px;
+  }
+
+  .HeaderRow {
+    display: flex;
+  }
+
+  .footer{
+    width: 200px;
+    height: 10px;
+    background-color: aqua;
   }
