@@ -17,6 +17,7 @@ import React from 'react';
 import { createTableStructure } from './CellTables/createTableHelper';
 import { Cell } from './CellTables/ICellProps';
 import { CellActionBar } from './CellActionBar/CellActionBar';
+import { DrawGrid } from './CanvasGrid/DrawGrid';
 
 
 // const data:any = [
@@ -129,7 +130,8 @@ function App() {
      <CellActionBar/>
      <ExcelFunctionBar/>
      {/* <ExcelTable/> */}
-     <DataEditor columns={columnsData} getCellContent={getContent} rows={cellData.length} onCellEdited={onCellEdit} width={1400} height={500}/>
+     {/* <DataEditor columns={columnsData} getCellContent={getContent} rows={cellData.length} onCellEdited={onCellEdit} width={1400} height={500}/> */}
+     <DrawGrid/>
     </div>
   );
 }
