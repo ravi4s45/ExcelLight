@@ -20,30 +20,7 @@ import { CellActionBar } from './CellActionBar/CellActionBar';
 import { DrawGrid } from './CanvasGrid/DrawGrid';
 
 
-// const data:any = [
-//   {
-//     firstName: "John",
-//     lastName: "Doe"
-//   },
-//   {
-//     firstName: "Maria",
-//     lastName: "Garcia"
-//   },
-//   {
-//     firstName: "Nancy",
-//     lastName: "Jones"
-//   },
-//   {
-//     firstName: "James",
-//     lastName: "Smith"
-//   }
-// ];
 
-// // Grid columns may also provide icon, overlayIcon, menu, style, and theme overrides
-// const columns: GridColumn[] = [
-//   { title: "First Name", width: 100 },
-//   { title: "Last Name", width: 100 }
-// ];
 
 function generateColumns(numColumns:number) {
   const columns = [];
@@ -80,17 +57,10 @@ let columnsData:GridColumn[] = columnData;
 function App() {
  
   useEffect(()=>{
-    // createTableStructure();
-    // const tableLocalDataJSON = localStorage.getItem('matrixDataForPrimeUser');
-    // const matrix:Cell[][] = JSON.parse(tableLocalDataJSON?tableLocalDataJSON:'');
-    // const data:any= convertNestedArray(matrix);
-    // const columnData:GridColumn[] = generateColumns(26);
     cellData = data;
     columnsData = columnData;
     console.log(data);
     console.log(columnData);
-    // setCellData(data);
-    // setColumnsData(columnData);
     
   },[])
   const a = new Array(1).fill(new Array(1).fill(0))
