@@ -1,9 +1,18 @@
-import { useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
+import { IDrawGridProps } from "./IDrawGridProps";
 
-export function DrawGrid(){
+export function DrawGrid(props:IDrawGridProps){
     const canvasRef = useRef(null)
-    // const [prevSelectedValX,setPrevSelectedValX] = useState(-1)
-    // const [prevSelectedValY,setPrevSelectedValY] = useState(-1)
+    const dynamicInputRef = useRef(null);
+    const [value, setValue] = useState('');
+    const [isEditing,setIsEditing] = useState(false);
+    const [dynamicInputVal,SetDynamicInputVal] = useState('');
+    const HandleChange = (event:React.ChangeEvent<HTMLInputElement>) => {
+        setValue(event.target.value);
+    };
+    const HandleDynamicInputChange = (event:any) => {
+        SetDynamicInputVal(event.target.value);
+      };
     let prevSelectedValX = -1;
     let prevSelectedValY = -1;
     useEffect(() => {
@@ -40,17 +49,35 @@ export function DrawGrid(){
             ctx.lineWidth = "2";
             ctx.strokeStyle = "#0484fc";
             ctx.rect(nearestTopLeftPoints.xTop, nearestTopLeftPoints.yLeft, 90, 35);
+            ctx.fillText(props.CommonFuncCanvasCellVal, nearestTopLeftPoints.xTop,nearestTopLeftPoints.yLeft);
             ctx.stroke()
             prevSelectedValX = (nearestTopLeftPoints.xTop);
             prevSelectedValY = (nearestTopLeftPoints.yLeft);
+            props.SetActiveCell(convertToTitle((prevSelectedValX/90)+1) +'-'+ ((prevSelectedValY/35)+1));
+        })
+        canvas.addEventListener('dblclick',function(e:any){
+            let posObj = getMousePos(canvas,e);
+            let editableInputPos = getNearestTopLeftPoint(posObj.x,posObj.y,90,35);
+            const editableInput:any = dynamicInputRef.current;
+            if(editableInput){
+            editableInput.style.top = editableInputPos.yLeft+"px";
+            editableInput.style.left = editableInputPos.xTop+"px";
+            }
+            setIsEditing(true);
         })
       }, [])
     return(
-        <>
+        <div style={{position:'relative'}}>
+        <input
+          ref={dynamicInputRef}
+          type="text"
+          value={dynamicInputVal}
+          onChange={HandleDynamicInputChange}
+          style={{display:isEditing?'block':'none',position:'absolute',width:'82px',height:'30px'}}
+        />
         <canvas ref={canvasRef} width={window.innerWidth} height={3500}>
-
         </canvas>
-        </>
+        </div>
     )
 }
 function getMousePos(canvas:any, evt:any) {
@@ -66,3 +93,24 @@ function getMousePos(canvas:any, evt:any) {
           yLeft:(Math.floor(y/cellHeight)*cellHeight)
       }
   }
+
+  function convertToTitle(columnNumber:number) {
+    const numberToCharacterMap:any = {};
+    for (let i = 1; i <= 26; i++) {
+        const character = String.fromCharCode(i + 64);
+        numberToCharacterMap[i] = character;
+    }
+    let resp = "";
+    while(columnNumber > 0) {
+        let remainder = columnNumber % 26;
+        if (remainder === 0) {
+            resp = 'Z' + resp;
+            columnNumber = Math.floor(columnNumber / 26) - 1;
+        } else {
+            resp = numberToCharacterMap[remainder] + resp;
+            columnNumber = Math.floor(columnNumber / 26);
+        }
+    }
+    return resp;
+}
+
