@@ -5,7 +5,8 @@ import { IExcelFunctionBarProps } from './IExcelFunctionBarProps';
 export function ExcelFunctionBar(props:IExcelFunctionBarProps){
 
   const HandleFxInput = (e:React.ChangeEvent<HTMLInputElement>)=>{
-    props.SetCommonFuncCanvasCellVal(e.target.value)
+    props.SetCommonFuncCanvasCellVal(e.target.value);
+    props.SetIsEditingFx(true);
   }
     return(
       <>

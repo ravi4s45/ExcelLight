@@ -14,16 +14,17 @@ import { DrawGrid } from './CanvasGrid/DrawGrid';
 function App() {
 const [activeCellId,SetActiveCellId] = useState('');
 const [commonFuncCanvasCellVal,SetCommonFuncCanvasCellVal] = useState('');
+const [isEditingFx,setIsEditingFx] = useState(false);
   return (
     <div>
      <MenuBar/>
      {/* <MainTable/> */}
      {/* <CreateCellTables/> */}
      <CellActionBar/>
-     <ExcelFunctionBar ActiveCell = {activeCellId} CommonFuncCanvasCellVal={commonFuncCanvasCellVal} SetCommonFuncCanvasCellVal={SetCommonFuncCanvasCellVal}/>
+     <ExcelFunctionBar ActiveCell = {activeCellId} CommonFuncCanvasCellVal={commonFuncCanvasCellVal} SetCommonFuncCanvasCellVal={SetCommonFuncCanvasCellVal} SetIsEditingFx={setIsEditingFx}/>
      {/* <ExcelTable/> */}
      {/* <DataEditor columns={columnsData} getCellContent={getContent} rows={cellData.length} onCellEdited={onCellEdit} width={1400} height={500}/> */}
-     <DrawGrid SetActiveCell = {SetActiveCellId} CommonFuncCanvasCellVal={commonFuncCanvasCellVal} SetCommonFuncCanvasCellVal={SetCommonFuncCanvasCellVal}/>
+     <DrawGrid SetActiveCell = {SetActiveCellId} CommonFuncCanvasCellVal={commonFuncCanvasCellVal} SetCommonFuncCanvasCellVal={SetCommonFuncCanvasCellVal} IsEditingFx={isEditingFx}/>
     </div>
   );
 }

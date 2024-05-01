@@ -12,6 +12,7 @@ export function DrawGrid(props:IDrawGridProps){
     };
     const HandleDynamicInputChange = (event:any) => {
         SetDynamicInputVal(event.target.value);
+        props.SetCommonFuncCanvasCellVal(event.target.value);
       };
     let prevSelectedValX = -1;
     let prevSelectedValY = -1;
@@ -55,7 +56,7 @@ export function DrawGrid(props:IDrawGridProps){
             prevSelectedValY = (nearestTopLeftPoints.yLeft);
             props.SetActiveCell(convertToTitle((prevSelectedValX/90)+1) +'-'+ ((prevSelectedValY/35)+1));
         })
-        canvas.addEventListener('dblclick',function(e:any){
+        canvas.addEventListener('click',function(e:any){
             let posObj = getMousePos(canvas,e);
             let editableInputPos = getNearestTopLeftPoint(posObj.x,posObj.y,90,35);
             const editableInput:any = dynamicInputRef.current;
@@ -71,7 +72,7 @@ export function DrawGrid(props:IDrawGridProps){
         <input
           ref={dynamicInputRef}
           type="text"
-          value={dynamicInputVal}
+          value={props.IsEditingFx?props.CommonFuncCanvasCellVal:dynamicInputVal}
           onChange={HandleDynamicInputChange}
           style={{display:isEditing?'block':'none',position:'absolute',width:'82px',height:'30px'}}
         />
