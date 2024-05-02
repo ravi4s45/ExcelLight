@@ -159,11 +159,10 @@ export function CreateCellTables(props:CreateCellTablesProps){
             <div className={styles.NumColumnTable}>
               <div className={styles.tableHeaderNum} style={{height:'21px', backgroundColor:'#d1d1d1'}}></div>
               {
-              tableData.map((row,rowIndex) =>
-              <div className={styles.tableHeaderNum} id={(rowIndex+1).toString()}  key={rowIndex}>{rowIndex+1}
-                     </div>
-                     )
-                     }
+               tableData.map((row,rowIndex) =>
+                <div className={styles.tableHeaderNum} id={(rowIndex+1).toString()}  key={rowIndex}>{rowIndex+1}</div>
+               )
+               }
             </div>
             <div className={styles.MainTable}>
               <div className={styles.HeaderRow}>
