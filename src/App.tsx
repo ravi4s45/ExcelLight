@@ -14,9 +14,9 @@ import ExcelFooter from './ExcelFooter/ExcelFooter'
 import { Sheet } from './CanvasSheet/Sheet';
 
 const initialData:any = [];
-for (let row = 0; row < 1000; row++) {
+for (let row = 0; row < 1; row++) {
   const rowData = [];
-  for (let col = 0; col < 1000; col++) {
+  for (let col = 0; col < 1; col++) {
     rowData.push(`${col + 1}`);
   }
   initialData.push(rowData);
@@ -46,7 +46,7 @@ const [displayData, setDisplayData] = useState(initialData);
      <MenuBar/>
      <CellActionBar/>
      <ExcelFunctionBar ActiveCell = {activeCellId} CommonFuncCanvasCellVal={commonFuncCanvasCellVal} SetCommonFuncCanvasCellVal={SetCommonFuncCanvasCellVal} SetIsEditingFx={setIsEditingFx}/>
-     <Sheet displayData={displayData} onChange={onChange}/>
+     <Sheet displayData={displayData} onChange={onChange} SetActiveCell = {SetActiveCellId} CommonFuncCanvasCellVal={commonFuncCanvasCellVal} SetCommonFuncCanvasCellVal={SetCommonFuncCanvasCellVal}/>
      {/* <DrawGrid SetActiveCell = {SetActiveCellId} CommonFuncCanvasCellVal={commonFuncCanvasCellVal} SetCommonFuncCanvasCellVal={SetCommonFuncCanvasCellVal} IsEditingFx={isEditingFx}/> */}
      <ExcelFooter/>
     </div>

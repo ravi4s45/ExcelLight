@@ -51,7 +51,7 @@ export const Sheet = (props:any) => {
                 cellX = visibleColumns[i];
             }
         }
-
+//---------------------------------------HERE I USED STATIC VALUE---------------------------------------------//
         for (let i = 0; i < visibleRows.length; i++) {
             if ((y-109) >= rowStart[i] && (y-109) <= rowEnd[i]) {
                 cellY = visibleRows[i];
@@ -84,7 +84,25 @@ export const Sheet = (props:any) => {
 
         return { x, y };
     }
-
+    const convertToAlphabet = (columnNumber:number) => {
+        const numberToCharacterMap:any = {};
+        for (let i = 1; i <= 26; i++) {
+            const character = String.fromCharCode(i + 64);
+            numberToCharacterMap[i] = character;
+        }
+        let resp = "";
+        while(columnNumber > 0) {
+            let remainder = columnNumber % 26;
+            if (remainder === 0) {
+                resp = 'Z' + resp;
+                columnNumber = Math.floor(columnNumber / 26) - 1;
+            } else {
+                resp = numberToCharacterMap[remainder] + resp;
+                columnNumber = Math.floor(columnNumber / 26);
+            }
+        }
+        return resp;
+    }
     useEffect(() => {
         const id = requestAnimationFrame(() => {
 
@@ -326,7 +344,8 @@ export const Sheet = (props:any) => {
 
         const cell = coordinateToCell(x, y);
         setEditCell({ x: cell.x, y: cell.y });
-
+        //Change the active cell
+        props.SetActiveCell(`${convertToAlphabet(cell.x+1)}-${cell.y + 1}`)
         const content = props?.displayData?.[cell.y]?.[cell.x];
         if (content) setEditValue(content);
     }
@@ -434,7 +453,7 @@ export const Sheet = (props:any) => {
                     autoFocus
                     type="text"
                     value={editValue}
-                    onChange={e => setEditValue(e.target.value)}
+                    onChange={e => {setEditValue(e.target.value);props.SetCommonFuncCanvasCellVal(e.target.value)}}
                     onKeyDown={onCellKeyDown}
                     style={{
                         position: 'absolute',
