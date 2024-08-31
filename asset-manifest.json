@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/CanvaTable/static/css/main.209b8cdd.css",
+    "main.js": "/CanvaTable/static/js/main.c96d6ae5.js",
+    "static/js/787.cccd431f.chunk.js": "/CanvaTable/static/js/787.cccd431f.chunk.js",
+    "index.html": "/CanvaTable/index.html",
+    "main.209b8cdd.css.map": "/CanvaTable/static/css/main.209b8cdd.css.map",
+    "main.c96d6ae5.js.map": "/CanvaTable/static/js/main.c96d6ae5.js.map",
+    "787.cccd431f.chunk.js.map": "/CanvaTable/static/js/787.cccd431f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.209b8cdd.css",
+    "static/js/main.c96d6ae5.js"
+  ]
+}
