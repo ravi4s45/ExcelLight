@@ -3,7 +3,6 @@ import { MenuBar } from './MenuBar/MenuBar';
 import { MainTable } from './CurrentCellFunction/MainTable';
 import { ExcelFunctionBar } from './ExcelFunctionBar/ExcelFunctionBar';
 import { createContext, useEffect, useState } from 'react';
-import "@glideapps/glide-data-grid/dist/index.css";
 import './index.css'
 import React from 'react';
 import { createTableStructure } from './CellTables/createTableHelper';
