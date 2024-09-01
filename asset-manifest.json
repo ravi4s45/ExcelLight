@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/ExcelLight/static/css/main.91c43dae.css",
-    "main.js": "/ExcelLight/static/js/main.3b5e24d6.js",
-    "static/js/787.cccd431f.chunk.js": "/ExcelLight/static/js/787.cccd431f.chunk.js",
+    "main.css": "/ExcelLight/static/css/main.7c7b57fe.css",
+    "main.js": "/ExcelLight/static/js/main.fe50d9d2.js",
+    "static/js/787.617837a0.chunk.js": "/ExcelLight/static/js/787.617837a0.chunk.js",
     "index.html": "/ExcelLight/index.html",
-    "main.91c43dae.css.map": "/ExcelLight/static/css/main.91c43dae.css.map",
-    "main.3b5e24d6.js.map": "/ExcelLight/static/js/main.3b5e24d6.js.map",
-    "787.cccd431f.chunk.js.map": "/ExcelLight/static/js/787.cccd431f.chunk.js.map"
+    "main.7c7b57fe.css.map": "/ExcelLight/static/css/main.7c7b57fe.css.map",
+    "main.fe50d9d2.js.map": "/ExcelLight/static/js/main.fe50d9d2.js.map",
+    "787.617837a0.chunk.js.map": "/ExcelLight/static/js/787.617837a0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.91c43dae.css",
-    "static/js/main.3b5e24d6.js"
+    "static/css/main.7c7b57fe.css",
+    "static/js/main.fe50d9d2.js"
   ]
 }
